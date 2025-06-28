@@ -20,7 +20,7 @@ export default function ProductCard({
       <img
         src={product.imageUrl}
         alt={product.title}
-        className=" w-full h-[10rem] object-cover bg-red-500"
+        className=" w-full h-[10rem] object-cover bg-muted"
       />
       <section className="flex flex-col gap-2 p-3 flex-1">
         <h3
