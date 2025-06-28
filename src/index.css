@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-body: Inter;
+  --font-heading: Inter;
+  --color-bacground: #ffffff;
+  --color-primary: #ef7f1a;
+  --color-onPrimary: #ffffff;
+  --color-muted: #292d32;
+  --color-card: #ffffff;
+  --color-body: #151621;
+  --color-border: #bfc4e8;
+  --color-brand-button: #ef7f1a;
+  --color-button-muted: #292d32;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.438rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.602rem;
+  --text-4xl: 1.875rem;
+  --text-5xl: 2rem;
+
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1250px;
+  --breakpoint-xxl: 1450px;
+  --breakpoint-xxxl: 1550px;
+  --breakpoint-xxxxl: 1650px;
+
+  --radius-sm:  4px;
+  --radius-md: 6px
+  --radius-lg: 8px
+  --radius-xl: 12px
+
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    min-width: 0px;
+  }
+  body {
+    @apply font-body text-base;
+    overflow-x: hidden;
+    position: relative;
+  }
+  h1 {
+    @apply font-heading text-xl;
+  }
+  h2 {
+    @apply text-lg font-heading font-bold;
+  }
+  h3 {
+    @apply font-heading  font-bold leading-7;
+  }
+  p {
+    @apply font-body text-sm;
+  }
+  li {
+    @apply font-body text-sm;
+  }
+
+}
+
