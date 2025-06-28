@@ -1,34 +1,32 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import ProductCard from "./components/productCard";
+import { products } from "./data/product.data";
+import type { IProduct } from "./types/product.type";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const handleProductView = (product: IProduct) => {};
+  const handleAddToCart = (product: IProduct) => {};
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="text-primary">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className=" font-body text-muted font-semibold">
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="text-body font-body">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main className="flex flex-col items-center justify-center px-4 min-h-screen py-5 ">
+      <section className=" flex flex-col gap-4 max-w-[75rem] bg-bacground shadow-sm p-4 rounded-sm">
+        <h1 className="font-heading text-body text-lg md:text-xl font-medium leading-6">
+          Featured Products
+        </h1>
+        <div className="flex items-center flex-wrap gap-2 self-center justify-stretch">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className=" w-[48%] md:w-[32%] lg:w-[15%] self-stretch"
+            >
+              <ProductCard
+                product={product}
+                onAddToCart={handleAddToCart}
+                onClick={handleProductView}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
 
