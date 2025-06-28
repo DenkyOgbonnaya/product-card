@@ -13,6 +13,7 @@ export default function ProductCard({
   const isOutOfStock = product.stock < 1;
   return (
     <article
+      onClick={() => onAddToCart(product)}
       data-testid="product"
       className=" bg-card cursor-pointer rounded-sm flex flex-col gap-4 shadow-sm max-w-[19rem] h-full hover:shadow-lg overflow-hidden"
     >
@@ -58,6 +59,7 @@ export default function ProductCard({
           ))}
         </ul>
         <button
+          onClick={() => onAddToCart(product)}
           disabled={isOutOfStock}
           data-testid="add-to-cart-btn"
           aria-disabled={isOutOfStock}
